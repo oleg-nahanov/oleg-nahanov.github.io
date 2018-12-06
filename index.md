@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="posts">
+<div class="posts">test
   <ul>
   {% for post in site.posts %}
     <li>
