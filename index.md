@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="posts">test
+<div class="posts">das tool
   <ul>
   {% for post in site.posts %}
     <li>
