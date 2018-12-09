@@ -41,7 +41,31 @@
       </div>
     </div>
 
-    {% include analytics.html %}
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDnPQiqtjGzAwmmXk2BhbAYHUmDgna3-QY",
+    authDomain: "onwphilincomua.firebaseapp.com",
+    databaseURL: "https://onwphilincomua.firebaseio.com",
+    projectId: "onwphilincomua",
+    storageBucket: "onwphilincomua.appspot.com",
+    messagingSenderId: "586580471736"
+  };
+  firebase.initializeApp(config);
+  
+function writeUserData(userId, name, email, imageUrl) {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture : imageUrl
+  });
+}
+
+writeUserData(1, 'Oleg', 'Nahanov', 'ava.png')
+</script>
+
+
     <!-- BEGIN JIVOSITE CODE {literal} -->
 <script type='text/javascript'>
 (function(){ var widget_id = 'ElDY7gR2a2';var d=document;var w=window;function l(){var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
